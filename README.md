@@ -14,16 +14,13 @@
 ---
 
 <h3 align="center">📊 GitHub Stats</h3>
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Serpentum&theme=github_dark" />
-</p>
-
-<p align="center">
-  <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+<div style="display: flex; flex-direction: column; width: 100%; align-items: center; gap: 10px;">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Serpentum&theme=github_dark" style="width: 100%; max-width: 500px;" />
+  <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; width: 100%;">
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" style="flex: 1; max-width: 49%; min-width: 300px;" />
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" style="flex: 1; max-width: 49%; min-width: 300px;" />
   </div>
-</p>
+</div>
 
 ---
 
