@@ -21,3 +21,12 @@ jobs:
             output/snake-neon.svg?color=neon
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify and commit
+        run: |
+          ls -la output/ || echo "No output files"
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add output/
+          git diff --staged --quiet || git commit -m "chore: update snake"
+          git push || echo "Push failed"
