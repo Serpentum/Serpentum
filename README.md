@@ -33,5 +33,9 @@
 
 <h3 align="center">🐍 Contribution Snake</h3>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Serpentum/Serpentum/output/snake-neon.svg" alt="GitHub Snake" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Serpentum/Serpentum/output/snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Serpentum/Serpentum/output/snake.svg" />
+    <img alt="github-snake" src="https://raw.githubusercontent.com/Serpentum/Serpentum/output/snake.svg" />
+  </picture>
 </p>
