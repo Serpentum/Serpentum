@@ -1,57 +1,105 @@
 import json
+import os
 import requests
 import sys
 from datetime import datetime, timedelta
 
 def fetch_contributions(username):
-    url = f"https://api.github.com/users/{username}/contributions"
-    today = datetime.now()
-    start_date = today - timedelta(days=364)
-    params = {'since': start_date.strftime('%Y-%m-%d'), 'until': today.strftime('%Y-%m-%d')}
-    response = requests.get(url, params=params)
+    query = """
+    {
+      user(login: "%s") {
+        contributionsCollection {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+              }
+            }
+          }
+        }
+      }
+    }
+    """ % username
+    
+    headers = {}
+    token = os.environ.get('GITHUB_TOKEN')
+    if token:
+        headers['Authorization'] = f'Bearer {token}'
+        headers['Content-Type'] = 'application/json'
+    
+    response = requests.post('https://api.github.com/graphql', headers=headers, json={'query': query})
     if response.status_code != 200:
-        print(f"Error fetching contributions: {response.status_code}")
+        print(f"GraphQL Error: {response.status_code} - {response.text}")
         sys.exit(1)
-    return response.json()
-
-def generate_snake_svg(data, output_path, color_mode='normal'):
-    days = data['contributions']
-    grid = [['#ebedf0'] * 7 for _ in range(365 // 7 + 1)]
     
-    for day in days:
-        date = datetime.strptime(day['date'], '%Y-%m-%d')
+    result = response.json()
+    if 'data' not in result:
+        print(f"GraphQL Error: {result}")
+        sys.exit(1)
+    
+    cal = result['data']['user']['contributionsCollection']['contributionCalendar']
+    contributions = []
+    for week in cal['weeks']:
+        for day in week['contributionDays']:
+            contributions.append({
+                'date': day['date'],
+                'count': day['contributionCount']
+            })
+    
+    return contributions
+
+def generate_snake(data, output_path, color_mode='normal'):
+    color_map = {
+        0: '#ebedf0',
+        1: '#9be9a8',
+        2: '#40c463',
+        3: '#30a14e',
+        4: '#256b39'
+    }
+    
+    if color_mode == 'neon':
+        color_map = {
+            0: '#0d1117',
+            1: '#00f5d4',
+            2: '#00f5d4',
+            3: '#00f5d4',
+            4: '#00f5d4'
+        }
+    
+    cell_size = 16
+    gap = 3
+    offset_x = 10
+    offset_y = 10
+    cols = 7
+    rows = 53
+    
+    svg_width = cols * (cell_size + gap) + offset_x * 2
+    svg_height = rows * (cell_size + gap) + offset_y * 2
+    
+    svg = f'''<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="{svg_width}" height="{svg_height}" viewBox="0 0 {svg_width} {svg_height}" fill="{color_map[0]}">
+'''
+    
+    for i, day in enumerate(data):
+        week = i // cols
+        col = i % cols
+        if week >= rows:
+            break
+        x = offset_x + col * (cell_size + gap)
+        y = offset_y + week * (cell_size + gap)
         count = day['count']
-        week = (date - datetime(2025, 1, 1)).days // 7
-        if week < len(grid):
-            col = date.weekday()
-            if count > 0:
-                if count >= 9:
-                    grid[week][col] = '#58a6ff' if color_mode == 'normal' else '#00f5d4'
-                elif count >= 5:
-                    grid[week][col] = '#9be9a8' if color_mode == 'normal' else '#00f5d4'
-                elif count >= 3:
-                    grid[week][col] = '#40c463' if color_mode == 'normal' else '#00f5d4'
-                elif count >= 1:
-                    grid[week][col] = '#30a14e' if color_mode == 'normal' else '#00f5d4'
-
-    svg = '<?xml version="1.0" encoding="UTF-8"?>\n'
-    svg += '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 770 505" fill="none">\n'
-    svg += f'  <rect width="770" height="505" fill="#{color_mode if color_mode == "neon" else "0d1117"}"/>\n'
-    
-    for week in range(len(grid)):
-        for col in range(7):
-            x = col * 16 + week * 16 + 10
-            y = week * 16 + 10
-            svg += f'  <rect x="{x}" y="{y}" width="15" height="15" rx="2" fill="{grid[week][col]}"/>\n'
+        color = color_map[min(count, 4)]
+        svg += f'  <rect x="{x}" y="{y}" width="{cell_size}" height="{cell_size}" rx="{2}" fill="{color}"/>\n'
     
     svg += '</svg>'
     
-    with open(output_path, 'w') as f:
+    with open(output_path, 'w', encoding='utf-8') as f:
         f.write(svg)
-    print(f"Snake generated: {output_path}")
+    print(f"Generated: {output_path}")
 
 if __name__ == '__main__':
-    username = 'Serpentum'
-    data = fetch_contributions(username)
-    generate_snake_svg(data, 'output/github-snake.svg', 'normal')
-    generate_snake_svg(data, 'output/github-snake-neon.svg', 'neon')
+    contributions = fetch_contributions('Serpentum')
+    generate_snake(contributions, 'output/snake.svg', 'normal')
+    generate_snake(contributions, 'output/snake-neon.svg', 'neon')

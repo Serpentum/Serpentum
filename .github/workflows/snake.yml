@@ -12,21 +12,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Generate Snake
-        uses: Platane/snk@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          github_user_name: Serpentum
-          outputs: |
-            output/snake.svg
-            output/snake-neon.svg?color=neon
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          python-version: '3.x'
 
-      - name: Verify and commit
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate Snake
+        run: python scripts/generate_snake.py
+
+      - name: Commit and push
         run: |
-          ls -la output/ || echo "No output files"
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add output/
           git diff --staged --quiet || git commit -m "chore: update snake"
-          git push || echo "Push failed"
+          git push
