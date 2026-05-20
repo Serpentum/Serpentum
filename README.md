@@ -1,3 +1,3 @@
 # 🐍 Serpentum
 
-![github-snake](https://raw.githubusercontent.com/Serpentum/Serpentum/output/github-snake-neon.svg)
+![github-snake](https://raw.githubusercontent.com/Serpentum/Serpentum/output/snake-neon.svg)

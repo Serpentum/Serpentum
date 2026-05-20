@@ -13,12 +13,23 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Generate Snake
-        uses: Platane/snk@v3
+        uses: dautraver/github-readme-snake@v1
         with:
           github_user_name: Serpentum
-          outputs: |
-            output/github-snake.svg
-            output/github-snake-dark.svg?palette=dark
-            output/github-snake-neon.svg?color=neon
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          output_file_path: output/snake.svg
+          color_palette: github-dark
+
+      - name: Generate Neon Snake
+        uses: dautraver/github-readme-snake@v1
+        with:
+          github_user_name: Serpentum
+          output_file_path: output/snake-neon.svg
+          color_palette: neon
+
+      - name: Commit and push
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add output/
+          git diff --staged --quiet || git commit -m "chore: update snake animation"
+          git push
