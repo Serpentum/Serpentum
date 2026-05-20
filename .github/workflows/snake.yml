@@ -1,0 +1,24 @@
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Generate Snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: Serpentum
+          outputs: |
+            output/github-snake.svg
+            output/github-snake-dark.svg?palette=dark
+            output/github-snake-neon.svg?color=neon
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
