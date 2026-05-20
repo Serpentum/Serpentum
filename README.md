@@ -19,8 +19,10 @@
 </p>
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" />
+  <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" style="flex: 1; max-width: 49%; min-width: 300px;" />
+    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" style="flex: 1; max-width: 49%; min-width: 300px;" />
+  </div>
 </p>
 
 ---
