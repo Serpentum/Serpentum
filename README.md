@@ -14,13 +14,27 @@
 ---
 
 <h3 align="center">📊 GitHub Stats</h3>
-<div style="display: flex; flex-direction: column; gap: 20px;">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Serpentum&theme=github_dark" style="width: 100%;" />
-  <div style="display: flex; justify-content: space-between; width: 100%;">
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" style="width: 49%;" />
-    <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" style="width: 49%;" />
-  </div>
-</div>
+<table align="center" style="border: none;">
+  <tr>
+    <td align="center">
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Serpentum&theme=github_dark" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center" style="padding-top: 20px;">
+      <table align="center" style="border: none;">
+        <tr>
+          <td align="center" style="padding-right: 10px;">
+            <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" />
+          </td>
+          <td align="center">
+            <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
 
 ---
 
