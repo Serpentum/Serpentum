@@ -16,7 +16,7 @@
 <h3 align="center">📊 GitHub Stats</h3>
 <div style="display: flex; flex-direction: column; gap: 20px;">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Serpentum&theme=github_dark" style="width: 100%;" />
-  <div style="display: flex; gap: 20px;">
+  <div style="display: flex; justify-content: space-between; width: 100%;">
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" style="width: 49%;" />
     <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" style="width: 49%;" />
   </div>
