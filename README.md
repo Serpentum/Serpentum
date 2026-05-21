@@ -1,5 +1,5 @@
 <h1 align="center">👋 Hey, I'm Serpentum</h1>
-<h3 align="center">Middle Frontend Developer | React & React Native</h3>
+<h3 align="center">Frontend Developer | React & React Native</h3>
 
 ---
 
