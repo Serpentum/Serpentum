@@ -54,7 +54,7 @@
 <h3 align="center">🏆 Achievements</h3>
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Serpentum&theme=flat&no-frame=true&margin-w=15&column=6" alt="GitHub trophies" />
+  <img src="https://github-trophies.vercel.app/?username=Serpentum&theme=flat&no-frame=true&margin-w=15&column=6" alt="GitHub trophies" />
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=100&section=footer" width="100%" />
