@@ -1,44 +1,60 @@
-<h1 align="center">👋 Hey, I'm Serpentum</h1>
-<h3 align="center">Frontend Developer | React & React Native</h3>
-
----
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=140&section=header&text=Serpentum&fontSize=42&fontColor=ffffff&animation=fadeIn" width="100%" />
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,typescript,javascript,nodejs,html,css,sass,redux" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=58A6FF&center=true&vCenter=true&width=500&lines=Hey%2C+I'm+Serpentum+%F0%9F%91%8B;Frontend+Developer;React+%26+React+Native;TypeScript+enthusiast" alt="Typing SVG" />
 </p>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=git,github,vscode,docker" />
+  <img src="https://komarev.com/ghpvc/?username=Serpentum&style=for-the-badge&color=58A6FF&label=PROFILE+VIEWS" alt="Profile views" />
+</p>
+
+---
+
+<h3 align="center">🛠 Tech Stack</h3>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=react,typescript,javascript,nodejs,html,css,sass,redux" alt="Core stack" />
+</p>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=git,github,vscode,docker" alt="Tools" />
 </p>
 
 ---
 
 <h3 align="center">📊 GitHub Stats</h3>
-<table align="center" style="border: 0; border-collapse: collapse; padding: 0; margin: 0;">
-  <tr>
-    <td align="center" style="border: 0 !important; padding: 0; margin: 0;">
-      <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Serpentum&theme=github_dark" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center" style="border: 0 !important; padding-top: 20px; padding-bottom: 0; margin: 0;">
-      <table align="center" style="border: 0; border-collapse: collapse; padding: 0; margin: 0;">
-        <tr>
-          <td align="center" style="border: 0 !important; padding-right: 10px; padding-left: 0; padding-top: 0; padding-bottom: 0; margin: 0;">
-            <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" />
-          </td>
-          <td align="center" style="border: 0 !important; padding-left: 10px; padding-right: 0; padding-top: 0; padding-bottom: 0; margin: 0;">
-            <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" />
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Serpentum&theme=github_dark" alt="Profile details" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" alt="Repos per language" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" alt="Most commit language" />
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Serpentum&theme=github-dark-blue&hide_border=true" alt="GitHub streak" />
+</p>
+
+---
+
+<h3 align="center">🐍 Contribution Snake</h3>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Serpentum/Serpentum/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Serpentum/Serpentum/output/github-contribution-grid-snake.svg" />
+    <img src="https://raw.githubusercontent.com/Serpentum/Serpentum/output/github-contribution-grid-snake.svg" alt="Snake animation eating my contributions" />
+  </picture>
+</p>
 
 ---
 
 <h3 align="center">🏆 Achievements</h3>
+
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Serpentum&theme=flat&no-frame=true&margin-w=15&column=6" />
+  <img src="https://github-profile-trophy.vercel.app/?username=Serpentum&theme=flat&no-frame=true&margin-w=15&column=6" alt="GitHub trophies" />
 </p>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=100&section=footer" width="100%" />
