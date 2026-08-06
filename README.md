@@ -21,15 +21,6 @@
 <h3 align="center">📊 GitHub Stats</h3>
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Serpentum&theme=github_dark" alt="Profile details" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Serpentum&theme=github_dark" alt="Repos per language" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Serpentum&theme=github_dark" alt="Most commit language" />
-</p>
-
-<p align="center">
   <img src="https://streak-stats.demolab.com?user=Serpentum&theme=github-dark-blue&hide_border=true" alt="GitHub streak" />
 </p>
 
